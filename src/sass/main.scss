@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+/* fonts */
+$LexendDeca: 'Lexend Deca', sans-serif;
+$BigShouldersDisplay: 'Big Shoulders Display', cursive;
+
+/* primary colors */
+$Dark-cyan: hsl(184, 100%, 22%);
+$Bright-orange: hsl(31, 77%, 52%);
+$Very-dark-cyan: hsl(179, 100%, 13%);
+
+/* neutral colors */
+$Transparent-white: hsla(0, 0%, 100%, 0.75); //paragraphs
+$Light-gray: hsl(0, 0%, 95%); //background, headings, buttons
+
+/* mixins */
+@mixin flexCenter($gap, $direction) {
+  gap: $gap;
+  display: flex;
+  align-items: center;
+  flex-direction: $direction;
+  justify-content: center;
+}
+
+@mixin flex($gap,
+  $direction,
+  $justify-content,
+  $align-items ) {
+  gap: $gap;
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  @include flexCenter(0, '');
+  font-size: 15px;
+  min-height: 100vh;
+  font-family: $LexendDeca;
+  background-color: $Light-gray;
+  color: $Light-gray;
+  padding: 2em;
+
+  .main {
+    border-radius: .6em;
+    overflow: hidden;
+
+    .sedans {
+      background-color: $Bright-orange;
+
+      button {
+        color: $Bright-orange;
+      }
+    }
+
+    .suvs {
+      background-color: $Dark-cyan;
+
+      button {
+        color: $Dark-cyan;
+      }
+    }
+
+    .luxury {
+      background-color: $Very-dark-cyan;
+
+      button {
+        color: $Very-dark-cyan;
+      }
+    }
+
+    .sedans,
+    .suvs,
+    .luxury {
+      button {
+        font-family: $LexendDeca;
+        padding: 1.2em 2.5em;
+        background-color: $Light-gray;
+        border-radius: 1.5rem;
+        border: 2px solid $Light-gray;
+
+        &:hover {
+          background-color: transparent;
+          color: $Light-gray;
+          border: 2px solid $Light-gray;
+        }
+      }
+    }
+
+    .main__card {
+      @include flex(2em, column, flex-start, flex-start);
+      padding: 2.8rem;
+
+
+      .card__info {
+        @include flex(1.5em, column, flex-start, flex-start);
+
+        h1 {
+          font-size: 2.5rem;
+          font-family: $BigShouldersDisplay;
+          color: $Light-gray;
+        }
+
+        color: $Transparent-white;
+      }
+    }
+  }
+}
+
+/* desktop query */
+
+@media (min-width: 783px) {
+  .main {
+    width: 900px;
+    @include flex(0, row, center, center);
+
+    .main__card {
+      gap: 7rem !important;
+    }
+  }
+}

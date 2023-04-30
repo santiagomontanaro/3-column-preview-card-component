@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+/* fonts */
+/* primary colors */
+/* neutral colors */
+/* mixins */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  gap: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: "";
+  justify-content: center;
+  font-size: 15px;
+  min-height: 100vh;
+  font-family: "Lexend Deca", sans-serif;
+  background-color: hsl(0, 0%, 95%);
+  color: hsl(0, 0%, 95%);
+  padding: 2em;
+}
+body .main {
+  border-radius: 0.6em;
+  overflow: hidden;
+}
+body .main .sedans {
+  background-color: hsl(31, 77%, 52%);
+}
+body .main .sedans button {
+  color: hsl(31, 77%, 52%);
+}
+body .main .suvs {
+  background-color: hsl(184, 100%, 22%);
+}
+body .main .suvs button {
+  color: hsl(184, 100%, 22%);
+}
+body .main .luxury {
+  background-color: hsl(179, 100%, 13%);
+}
+body .main .luxury button {
+  color: hsl(179, 100%, 13%);
+}
+body .main .sedans button,
+body .main .suvs button,
+body .main .luxury button {
+  font-family: "Lexend Deca", sans-serif;
+  padding: 1.2em 2.5em;
+  background-color: hsl(0, 0%, 95%);
+  border-radius: 1.5rem;
+  border: 2px solid hsl(0, 0%, 95%);
+}
+body .main .sedans button:hover,
+body .main .suvs button:hover,
+body .main .luxury button:hover {
+  background-color: transparent;
+  color: hsl(0, 0%, 95%);
+  border: 2px solid hsl(0, 0%, 95%);
+}
+body .main .main__card {
+  gap: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 2.8rem;
+}
+body .main .main__card .card__info {
+  gap: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: hsla(0, 0%, 100%, 0.75);
+}
+body .main .main__card .card__info h1 {
+  font-size: 2.5rem;
+  font-family: "Big Shoulders Display", cursive;
+  color: hsl(0, 0%, 95%);
+}
+
+/* desktop query */
+@media (min-width: 783px) {
+  .main {
+    width: 900px;
+    gap: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .main .main__card {
+    gap: 7rem !important;
+  }
+}/*# sourceMappingURL=main.css.map */
